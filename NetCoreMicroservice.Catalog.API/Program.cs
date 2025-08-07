@@ -1,4 +1,5 @@
 using NetCoreMicroservice.Catalog.API.Options;
+using NetCoreMicroservice.Catalog.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddOptionsExt();
+
+builder.Services.AddDatabaseServiceExt();
 
 var app = builder.Build();
 
