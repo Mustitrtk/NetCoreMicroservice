@@ -1,3 +1,4 @@
+using NetCoreMicroservice.Catalog.API.Features.Categories;
 using NetCoreMicroservice.Catalog.API.Options;
 using NetCoreMicroservice.Catalog.API.Repository;
 
@@ -13,6 +14,8 @@ builder.Services.AddOptionsExt();
 builder.Services.AddDatabaseServiceExt();
 
 var app = builder.Build();
+
+app.AddCategoryGroupEndpointExt();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
