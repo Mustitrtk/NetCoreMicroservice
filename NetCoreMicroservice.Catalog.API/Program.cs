@@ -1,6 +1,8 @@
+using NetCoreMicroservice.Catalog.API;
 using NetCoreMicroservice.Catalog.API.Features.Categories;
 using NetCoreMicroservice.Catalog.API.Options;
 using NetCoreMicroservice.Catalog.API.Repository;
+using NetCoreMicroservice.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddOptionsExt();
 
 builder.Services.AddDatabaseServiceExt();
+
+builder.Services.AddCommonServiceExt(typeof(CatalogAssembly));
 
 var app = builder.Build();
 
