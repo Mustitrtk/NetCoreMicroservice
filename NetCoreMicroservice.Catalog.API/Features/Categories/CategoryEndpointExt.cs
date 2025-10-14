@@ -1,5 +1,6 @@
 ﻿using NetCoreMicroservice.Catalog.API.Features.Categories.Create;
 using NetCoreMicroservice.Catalog.API.Features.Categories.GetAll;
+using NetCoreMicroservice.Catalog.API.Features.Categories.GetById;
 
 namespace NetCoreMicroservice.Catalog.API.Features.Categories
 {
@@ -9,7 +10,8 @@ namespace NetCoreMicroservice.Catalog.API.Features.Categories
         {
             app.MapGroup("api/categories")
                 .CreateCategoryGroupItemEndpoint()
-                .GetAllCategoryGroupItemEndpoint();
+                .GetAllCategoryGroupItemEndpoint()
+                .GetByIdCategoryGroupItemEndpoint();
         }
     }
 }
