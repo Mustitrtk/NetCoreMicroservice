@@ -1,6 +1,13 @@
-@NetCoreMicroservice.Catalog.API_HostAddress = http://localhost:5081
+@baseAddress = http://localhost:5081
 
-GET {{NetCoreMicroservice.Catalog.API_HostAddress}}/weatherforecast/
+GET {{baseAddress}}/api/categories
 Accept: application/json
 
+###
+Post {{baseAddress}}/api/categories
+Accept: application/json
+{
+  "name":"Category 1",
+  "description":"Category 1 description"
+}
 ###
