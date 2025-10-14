@@ -3,5 +3,5 @@ using NetCoreMicroservice.Shared;
 
 namespace NetCoreMicroservice.Catalog.API.Features.Categories.Create
 {
-    public record CreateCategoryCommand(string Name):IRequest<ServiceResult<CreateCategoryResponse>>;
+    public record CreateCategoryCommand(string Name):IRequestByServiceResult<CreateCategoryResponse>;
 }

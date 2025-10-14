@@ -9,7 +9,7 @@ using System.Net;
 
 namespace NetCoreMicroservice.Catalog.API.Features.Categories.GetById
 {
-    public record GetCategoryByIdQuery(Guid Id) : IRequest<ServiceResult<CategoryDTO>>;
+    public record GetCategoryByIdQuery(Guid Id) : IRequestByServiceResult<CategoryDTO>;
 
     public class GetCategoryByIdHandler(AppDbContext context, IMapper mapper) : IRequestHandler<GetCategoryByIdQuery, ServiceResult<CategoryDTO>>
     {
