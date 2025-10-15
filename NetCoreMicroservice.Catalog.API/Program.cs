@@ -1,5 +1,6 @@
 using NetCoreMicroservice.Catalog.API;
 using NetCoreMicroservice.Catalog.API.Features.Categories;
+using NetCoreMicroservice.Catalog.API.Features.Courses;
 using NetCoreMicroservice.Catalog.API.Options;
 using NetCoreMicroservice.Catalog.API.Repository;
 using NetCoreMicroservice.Shared.Extensions;
@@ -20,6 +21,7 @@ builder.Services.AddCommonServiceExt(typeof(CatalogAssembly));
 var app = builder.Build();
 
 app.AddCategoryGroupEndpointExt();
+app.AddCourseGroupEndpointExt();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
