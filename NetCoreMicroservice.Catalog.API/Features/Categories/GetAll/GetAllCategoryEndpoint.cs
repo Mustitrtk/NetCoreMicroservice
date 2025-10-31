@@ -11,7 +11,7 @@ using NetCoreMicroservice.Shared.Filters;
 namespace NetCoreMicroservice.Catalog.API.Features.Categories.GetAll
 {
 
-    public class GetAllCategoryQuery:IRequestByServiceResult<List<CategoryDTO>>;
+    public record GetAllCategoryQuery:IRequestByServiceResult<List<CategoryDTO>>;
 
 
     public class GetAllCategoryHandler(AppDbContext context, IMapper mapper) : IRequestHandler<GetAllCategoryQuery,ServiceResult<List<CategoryDTO>>>
