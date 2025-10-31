@@ -2,6 +2,7 @@
 using NetCoreMicroservice.Catalog.API.Features.Courses.Create;
 using NetCoreMicroservice.Catalog.API.Features.Courses.GetAll;
 using NetCoreMicroservice.Catalog.API.Features.Courses.GetById;
+using NetCoreMicroservice.Catalog.API.Features.Courses.Update;
 
 namespace NetCoreMicroservice.Catalog.API.Features.Courses
 {
@@ -12,7 +13,8 @@ namespace NetCoreMicroservice.Catalog.API.Features.Courses
             app.MapGroup("api/courses").WithTags("Courses")
                 .CreateCourseGroupItemEndpoint()
                 .GetAllCoursesGroupItemEndpoint()
-                .GetByIdCourseGroupItemEndpoint();
+                .GetByIdCourseGroupItemEndpoint()
+                .UpdateCourseGroupItemEndpoint();
         }
     }
 }

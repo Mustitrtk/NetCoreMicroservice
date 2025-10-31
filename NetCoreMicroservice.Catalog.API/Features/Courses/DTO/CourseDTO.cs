@@ -7,7 +7,7 @@ namespace NetCoreMicroservice.Catalog.API.Features.Courses.DTO
         string Name, 
         string Description, 
         decimal Price, 
-        string Picture,
+        string? Picture,
         CategoryDTO Category,
         FeatureDTO Feature);
 }
