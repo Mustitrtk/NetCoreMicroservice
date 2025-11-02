@@ -33,7 +33,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Categories.GetById
         public static RouteGroupBuilder GetByIdCategoryGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapGet("/{Id:guid}",
-                async (IMediator mediator, Guid Id) => (await mediator.Send(new GetCategoryByIdQuery(Id))).ToResult());
+                async (IMediator mediator, Guid Id) => (await mediator.Send(new GetCategoryByIdQuery(Id))).ToResult())
+                .MapToApiVersion(1, 0)
+                .WithTags("GetCategoryById");
 
             return group;
         }

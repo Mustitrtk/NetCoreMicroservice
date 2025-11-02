@@ -10,7 +10,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Courses.Create
         public static RouteGroupBuilder CreateCourseGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapPost("/",
-                async (CreateCourseCommand command, IMediator mediator) => (await mediator.Send(command)).ToResult()).AddEndpointFilter<ValidationFilters<CreateCourseCommand>>().WithName("CreateCourse");
+                async (CreateCourseCommand command, IMediator mediator) => (await mediator.Send(command)).ToResult()).AddEndpointFilter<ValidationFilters<CreateCourseCommand>>()
+                .MapToApiVersion(1, 0)
+                .WithName("CreateCourse");
 
             return group;
         }

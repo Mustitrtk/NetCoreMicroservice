@@ -35,7 +35,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Courses.GetAll
         public static RouteGroupBuilder GetAllCoursesGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapGet("/",
-                async (IMediator mediator) => (await mediator.Send(new GetAllCoursesQuery())).ToResult()).WithName("GetAllCourses");
+                async (IMediator mediator) => (await mediator.Send(new GetAllCoursesQuery())).ToResult())
+                .MapToApiVersion(1, 0)
+                .WithName("GetAllCourses");
 
             return group;
         }

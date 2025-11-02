@@ -10,7 +10,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Courses.Update
         public static RouteGroupBuilder UpdateCourseGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapPost("/",
-                async (UpdateCourseCommand command, IMediator mediator) => (await mediator.Send(command)).ToResult()).AddEndpointFilter<ValidationFilters<UpdateCourseCommand>>().WithName("UpdateCourse");
+                async (UpdateCourseCommand command, IMediator mediator) => (await mediator.Send(command)).ToResult()).AddEndpointFilter<ValidationFilters<UpdateCourseCommand>>()
+                .MapToApiVersion(1, 0)
+                .WithName("UpdateCourse");
 
             return group;
         }

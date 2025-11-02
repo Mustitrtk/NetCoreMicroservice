@@ -11,7 +11,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Categories.Create
         public static RouteGroupBuilder CreateCategoryGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapPost("/", 
-                async (CreateCategoryCommand command, IMediator mediator) => (await mediator.Send(command)).ToResult()).AddEndpointFilter<ValidationFilters<CreateCategoryCommand>>();
+                async (CreateCategoryCommand command, IMediator mediator) => (await mediator.Send(command)).ToResult()).AddEndpointFilter<ValidationFilters<CreateCategoryCommand>>()
+                .MapToApiVersion(1,0)
+                .WithTags("CreateCategory");
 
             return group;
         }

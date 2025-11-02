@@ -29,7 +29,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Categories.GetAll
         public static RouteGroupBuilder GetAllCategoryGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapGet("/",
-                async (IMediator mediator) => (await mediator.Send(new GetAllCategoryQuery())).ToResult());
+                async (IMediator mediator) => (await mediator.Send(new GetAllCategoryQuery())).ToResult())
+                .MapToApiVersion(1, 0)
+                .WithTags("GetCategories");
 
             return group;
         }

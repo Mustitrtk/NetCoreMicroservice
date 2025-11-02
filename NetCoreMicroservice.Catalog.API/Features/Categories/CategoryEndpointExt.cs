@@ -1,4 +1,5 @@
-﻿using NetCoreMicroservice.Catalog.API.Features.Categories.Create;
+﻿using Asp.Versioning.Builder;
+using NetCoreMicroservice.Catalog.API.Features.Categories.Create;
 using NetCoreMicroservice.Catalog.API.Features.Categories.GetAll;
 using NetCoreMicroservice.Catalog.API.Features.Categories.GetById;
 
@@ -6,9 +7,10 @@ namespace NetCoreMicroservice.Catalog.API.Features.Categories
 {
     public static class CategoryEndpointExt
     {
-        public static void AddCategoryGroupEndpointExt(this WebApplication app)
+        public static void AddCategoryGroupEndpointExt(this WebApplication app, ApiVersionSet apiVersionSet)
         {
-            app.MapGroup("api/categories").WithTags("Categories")
+            app.MapGroup("api/v:{version:apiVersion}/categories").WithTags("Categories")
+                .WithApiVersionSet(apiVersionSet)
                 .CreateCategoryGroupItemEndpoint()
                 .GetAllCategoryGroupItemEndpoint()
                 .GetByIdCategoryGroupItemEndpoint();

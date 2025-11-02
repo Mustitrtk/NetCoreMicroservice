@@ -34,7 +34,9 @@ namespace NetCoreMicroservice.Catalog.API.Features.Courses.Delete
         public static RouteGroupBuilder DeleteCourseGroupItemEndpoint(this RouteGroupBuilder group)
         {
             group.MapDelete("/{Id:guid}",
-                async (IMediator mediator, Guid Id) => (await mediator.Send(new DeleteCourseQuery(Id))).ToResult()).WithName("DeleteCourse");
+                async (IMediator mediator, Guid Id) => (await mediator.Send(new DeleteCourseQuery(Id))).ToResult())
+                .MapToApiVersion(1, 0)
+                .WithName("DeleteCourse");
 
             return group;
         }
