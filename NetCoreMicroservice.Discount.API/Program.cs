@@ -1,4 +1,6 @@
 using NetCoreMicroservice.Discount.API;
+using NetCoreMicroservice.Discount.API.Options;
+using NetCoreMicroservice.Discount.API.Repository;
 using NetCoreMicroservice.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(); 
+builder.Services.AddOptionsExt();
+builder.Services.AddDatabaseServiceExt();
 builder.Services.AddCommonServiceExt(typeof(DiscountAssembly));
 builder.Services.AddVersioningExt();
 
