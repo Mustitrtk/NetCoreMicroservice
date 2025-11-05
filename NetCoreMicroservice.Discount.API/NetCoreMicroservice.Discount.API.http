@@ -1,0 +1,6 @@
+@NetCoreMicroservice.Discount.API_HostAddress = http://localhost:5220
+
+GET {{NetCoreMicroservice.Discount.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

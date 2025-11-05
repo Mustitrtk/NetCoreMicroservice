@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{2F63B1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreMicroservice.Shared", "..\NetCoreMicroservice.Shared\NetCoreMicroservice.Shared.csproj", "{383C1487-C58D-4CFD-94B4-88605E80D10F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{7CD0B6C9-26D1-4585-AD2C-7CBDE585739F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreMicroservice.Discount.API", "NetCoreMicroservice.Discount.API\NetCoreMicroservice.Discount.API.csproj", "{6FA45C4F-E7DD-41D7-90FE-2244FA616B24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{383C1487-C58D-4CFD-94B4-88605E80D10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{383C1487-C58D-4CFD-94B4-88605E80D10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{383C1487-C58D-4CFD-94B4-88605E80D10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA45C4F-E7DD-41D7-90FE-2244FA616B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA45C4F-E7DD-41D7-90FE-2244FA616B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA45C4F-E7DD-41D7-90FE-2244FA616B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA45C4F-E7DD-41D7-90FE-2244FA616B24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +53,8 @@ Global
 		{0959C454-8F57-4D2E-913B-EE7B4FE5C20B} = {17C6C18E-15C8-40E9-83FE-C40B4317BBD0}
 		{2F63B1C1-968A-47E6-838A-9126F379C19F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{383C1487-C58D-4CFD-94B4-88605E80D10F} = {2F63B1C1-968A-47E6-838A-9126F379C19F}
+		{7CD0B6C9-26D1-4585-AD2C-7CBDE585739F} = {4A169CCE-368B-4BDA-A856-391656FB0543}
+		{6FA45C4F-E7DD-41D7-90FE-2244FA616B24} = {7CD0B6C9-26D1-4585-AD2C-7CBDE585739F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EAB146D-EC22-401F-810B-E6BDE7D159A0}
