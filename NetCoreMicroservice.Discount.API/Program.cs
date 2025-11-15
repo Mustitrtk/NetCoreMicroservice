@@ -1,4 +1,5 @@
 using NetCoreMicroservice.Discount.API;
+using NetCoreMicroservice.Discount.API.Features.Discount;
 using NetCoreMicroservice.Discount.API.Options;
 using NetCoreMicroservice.Discount.API.Repository;
 using NetCoreMicroservice.Shared.Extensions;
@@ -17,6 +18,8 @@ builder.Services.AddCommonServiceExt(typeof(DiscountAssembly));
 builder.Services.AddVersioningExt();
 
 var app = builder.Build();
+
+app.AddDiscountGroupEndpointExt(app.AddVersionSetExt());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
