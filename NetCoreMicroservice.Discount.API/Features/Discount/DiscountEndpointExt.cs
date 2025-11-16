@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning.Builder;
 using NetCoreMicroservice.Discount.API.Features.Discount.CreateDiscount;
+using NetCoreMicroservice.Discount.API.Features.Discount.GetDiscountByCode;
 
 namespace NetCoreMicroservice.Discount.API.Features.Discount
 {
@@ -9,7 +10,8 @@ namespace NetCoreMicroservice.Discount.API.Features.Discount
         {
             app.MapGroup("api/v:{version:apiVersion}/discouns").WithTags("Discounts")
                 .WithApiVersionSet(apiVersionSet)
-                .CreateDiscountGroupItemEndpoint();
+                .CreateDiscountGroupItemEndpoint()
+                .GetDiscountByCodeGroupItemEndpoint();
         }
     }
 }
