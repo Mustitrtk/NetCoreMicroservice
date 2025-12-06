@@ -1,0 +1,6 @@
+@NetCoreMicroservice.Basket.API_HostAddress = http://localhost:5062
+
+GET {{NetCoreMicroservice.Basket.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
