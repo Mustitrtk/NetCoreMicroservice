@@ -24,29 +24,33 @@ namespace NetCoreMicroservice.Basket.API.Features.Baskets.AddBasketItem
             if (string.IsNullOrEmpty(hasBasketAsString))
             {
                 currentBasket = new BasketDTO(UserId, [currentBasketItem]);
+
+                await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
+
+                return ServiceResult.SuccessAsNoContent();
             }
-            else
+
+            currentBasket = JsonSerializer.Deserialize<BasketDTO>(hasBasketAsString);
+
+            var existItem = currentBasket.BasketItems.FirstOrDefault(x=>x.Id == request.CourseId);
+
+            if(existItem is not null)
             {
-                currentBasket = JsonSerializer.Deserialize<BasketDTO>(hasBasketAsString);
-
-                var existItem = currentBasket.BasketItems.FirstOrDefault(x=>x.Id == request.CourseId);
-
-                if(existItem is not null)
-                {
-                    currentBasket.BasketItems.Remove(existItem);
-                    currentBasket.BasketItems.Add(currentBasketItem);
-                }
-                else
-                {
-                    currentBasket.BasketItems.Add(currentBasketItem);
-                }
+                currentBasket.BasketItems.Remove(existItem);
             }
 
-            hasBasketAsString = JsonSerializer.Serialize(currentBasket);
+            currentBasket.BasketItems.Add(currentBasketItem);
 
-            await cache.SetStringAsync(cacheKey, hasBasketAsString, token: cancellationToken);
+            await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
 
             return ServiceResult.SuccessAsNoContent();
+        }
+
+        private async Task CreateCacheAsync(BasketDTO basket, string cacheKey, CancellationToken cancellationToken)
+        {
+            var hasBasketAsString = JsonSerializer.Serialize(basket);
+
+            await cache.SetStringAsync(cacheKey, hasBasketAsString, token: cancellationToken);
         }
     }
 }
