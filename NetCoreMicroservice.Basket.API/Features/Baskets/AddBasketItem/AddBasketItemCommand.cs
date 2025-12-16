@@ -1,4 +1,6 @@
-﻿namespace NetCoreMicroservice.Basket.API.Features.Baskets.AddBasketItem
+﻿using NetCoreMicroservice.Shared;
+
+namespace NetCoreMicroservice.Basket.API.Features.Baskets.AddBasketItem
 {
-    public record AddBasketItemCommand(Guid CourseId, string CourseName, decimal CoursePrice, string? Picture);
+    public record AddBasketItemCommand(Guid CourseId, string CourseName, decimal CoursePrice, string? Picture) : IRequestByServiceResult;
 }
